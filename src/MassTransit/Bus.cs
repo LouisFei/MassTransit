@@ -1,4 +1,4 @@
-// Copyright 2007-2016 Chris Patterson, Dru Sellers, Travis Smith, et. al.
+ï»¿// Copyright 2007-2016 Chris Patterson, Dru Sellers, Travis Smith, et. al.
 //  
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use
 // this file except in compliance with the License. You may obtain a copy of the 
@@ -17,7 +17,7 @@ namespace MassTransit
 
     /// <summary>
     /// used to get access to the bus factories
-    /// ÓÃÓÚ·ÃÎÊbus¹¤³§
+    /// ç”¨äºŽè®¿é—®buså·¥åŽ‚
     /// </summary>
     public static class Bus
     {
