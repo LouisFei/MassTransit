@@ -17,6 +17,7 @@ namespace MassTransit
 
     /// <summary>
     /// used to get access to the bus factories
+    /// 用于访问bus工厂
     /// </summary>
     public static class Bus
     {
