@@ -23,7 +23,9 @@ namespace MassTransit.RabbitMqTransport.Configurators
     using Topology.Settings;
     using Transport;
 
-
+    /// <summary>
+    /// RabbitMq总线工厂配置器
+    /// </summary>
     public class RabbitMqBusFactoryConfigurator :
         BusFactoryConfigurator,
         IRabbitMqBusFactoryConfigurator,
@@ -33,6 +35,11 @@ namespace MassTransit.RabbitMqTransport.Configurators
         readonly IRabbitMqBusConfiguration _configuration;
         readonly RabbitMqReceiveSettings _settings;
 
+        /// <summary>
+        /// 返回RabbitMq总线工厂配置器实例
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <param name="busEndpointConfiguration"></param>
         public RabbitMqBusFactoryConfigurator(IRabbitMqBusConfiguration configuration, IRabbitMqEndpointConfiguration busEndpointConfiguration)
             : base(configuration, busEndpointConfiguration)
         {
@@ -46,6 +53,10 @@ namespace MassTransit.RabbitMqTransport.Configurators
             _settings.SetExchangeArgument("x-expires", TimeSpan.FromMinutes(1));
         }
 
+        /// <summary>
+        /// 创建总线
+        /// </summary>
+        /// <returns>返回总线控制</returns>
         public IBusControl CreateBus()
         {
             var busReceiveEndpointConfiguration = _configuration.CreateReceiveEndpointConfiguration(_settings, _busEndpointConfiguration);
@@ -131,6 +142,11 @@ namespace MassTransit.RabbitMqTransport.Configurators
             _settings.EnablePriority(maxPriority);
         }
 
+        /// <summary>
+        /// 配置RabbitMq主机并返回
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <returns></returns>
         public IRabbitMqHost Host(RabbitMqHostSettings settings)
         {
             var hostTopology = _configuration.CreateHostTopology(settings.HostAddress);
@@ -177,6 +193,12 @@ namespace MassTransit.RabbitMqTransport.Configurators
             ConfigureReceiveEndpoint(configuration, configureEndpoint);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="host">rabbitMq主机</param>
+        /// <param name="queueName">消息队列名称</param>
+        /// <param name="configure"></param>
         public void ReceiveEndpoint(IRabbitMqHost host, string queueName, Action<IRabbitMqReceiveEndpointConfigurator> configure)
         {
             if (!_configuration.TryGetHost(host, out var hostConfiguration))

@@ -20,7 +20,8 @@ namespace MassTransit
 
 
     /// <summary>
-    /// A bus is a logical element that includes a local endpoint and zero or more receive endpoints
+    /// A bus is a logical element that includes a local endpoint and zero or more receive endpoints.
+    /// 总线是包含本地端点和零个或多个接收端点的逻辑元素
     /// </summary>
     public interface IBus :
         IPublishEndpoint,
@@ -35,6 +36,7 @@ namespace MassTransit
     {
         /// <summary>
         /// The InputAddress of the default bus endpoint
+        /// 默认总线端点的地址
         /// </summary>
         Uri Address { get; }
         

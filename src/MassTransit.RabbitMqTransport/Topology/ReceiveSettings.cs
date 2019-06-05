@@ -17,23 +17,27 @@ namespace MassTransit.RabbitMqTransport.Topology
 
 
     /// <summary>
-    /// Specify the receive settings for a receive transport
+    /// Specify the receive settings for a receive transport.
+    /// 为接收传输指定接收设置。
     /// </summary>
     public interface ReceiveSettings :
         EntitySettings
     {
         /// <summary>
         /// The queue name to receive from
+        /// 接收队列名称
         /// </summary>
         string QueueName { get; }
 
         /// <summary>
         /// The number of unacknowledged messages to allow to be processed concurrently
+        /// 允许并发处理的未确认消息的数量
         /// </summary>
         ushort PrefetchCount { get; }
 
         /// <summary>
         /// True if the queue receive should be exclusive and not shared
+        /// 如果队列接收应该是互斥的而不是共享的，则为真
         /// </summary>
         bool Exclusive { get; }
 
@@ -42,6 +46,9 @@ namespace MassTransit.RabbitMqTransport.Topology
         /// </summary>
         IDictionary<string, object> QueueArguments { get; }
 
+        /// <summary>
+        /// 路由键
+        /// </summary>
         string RoutingKey { get; }
 
         IDictionary<string, object> BindingArguments { get; }

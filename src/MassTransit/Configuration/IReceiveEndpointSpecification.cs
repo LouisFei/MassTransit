@@ -16,7 +16,8 @@ namespace MassTransit
 
 
     /// <summary>
-    /// Specification for configuring a receive endpoint
+    /// Specification for configuring a receive endpoint.
+    /// 配置接收端点的规范
     /// </summary>
     public interface IReceiveEndpointSpecification :
         ISpecification

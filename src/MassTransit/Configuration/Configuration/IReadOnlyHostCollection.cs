@@ -56,6 +56,9 @@ namespace MassTransit.Configuration
     }
 
 
+    /// <summary>
+    /// 只读主机集合
+    /// </summary>
     public interface IReadOnlyHostCollection :
         IEnumerable<IBusHostControl>
     {

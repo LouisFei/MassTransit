@@ -14,10 +14,14 @@ namespace MassTransit.Configuration
 {
     /// <summary>
     /// The configuration of a bus
+    /// 总线的配置
     /// </summary>
     public interface IBusConfiguration :
         IEndpointConfiguration
     {
+        /// <summary>
+        /// 主机集合
+        /// </summary>
         IReadOnlyHostCollection Hosts { get; }
     }
 }

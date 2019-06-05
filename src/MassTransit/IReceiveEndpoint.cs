@@ -20,6 +20,7 @@ namespace MassTransit
 
     /// <summary>
     /// A service endpoint has a inbound transport that pushes messages to consumers
+    /// 服务端点具有向使用者推送消息的入站传输
     /// </summary>
     public interface IReceiveEndpoint :
         ISendEndpointProvider,
@@ -32,6 +33,9 @@ namespace MassTransit
         IConsumeMessageObserverConnector,
         IProbeSite
     {
+        /// <summary>
+        /// 接收结点的上下文
+        /// </summary>
         ReceiveEndpointContext Context { get; }
     }
 }

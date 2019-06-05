@@ -18,7 +18,9 @@ namespace MassTransit.RabbitMqTransport.Configuration
     using Topology.Settings;
     using Transport;
 
-
+    /// <summary>
+    /// RabbitMq总线配置
+    /// </summary>
     public interface IRabbitMqBusConfiguration :
         IBusConfiguration
     {
@@ -45,6 +47,11 @@ namespace MassTransit.RabbitMqTransport.Configuration
         /// <param name="hostConfiguration"></param>
         bool TryGetHost(IRabbitMqHost host, out IRabbitMqHostConfiguration hostConfiguration);
 
+        /// <summary>
+        /// 创建主机拓扑
+        /// </summary>
+        /// <param name="hostAddress"></param>
+        /// <returns></returns>
         IRabbitMqHostTopology CreateHostTopology(Uri hostAddress);
 
         /// <summary>

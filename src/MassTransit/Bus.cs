@@ -23,6 +23,7 @@ namespace MassTransit
     {
         /// <summary>
         /// Access a bus factory from this main factory interface (easy extension method support)
+        /// 从主工厂接口访问总线工厂(容易扩展方法支持)
         /// </summary>
         public static IBusFactorySelector Factory { get; } = new BusFactorySelector();
     }

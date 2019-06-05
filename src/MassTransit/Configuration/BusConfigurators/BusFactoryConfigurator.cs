@@ -25,7 +25,9 @@ namespace MassTransit.BusConfigurators
     using SagaConfigurators;
     using Topology;
 
-
+    /// <summary>
+    /// 总线工厂配置基类
+    /// </summary>
     public abstract class BusFactoryConfigurator
     {
         readonly IEndpointConfiguration _busEndpointConfiguration;

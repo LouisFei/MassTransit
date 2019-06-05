@@ -17,7 +17,9 @@ namespace MassTransit.RabbitMqTransport
     using MassTransit.Builders;
     using Topology;
 
-
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IRabbitMqBusFactoryConfigurator :
         IBusFactoryConfigurator,
         IQueueEndpointConfigurator
@@ -58,19 +60,22 @@ namespace MassTransit.RabbitMqTransport
         void OverrideDefaultBusEndpointQueueName(string value);
 
         /// <summary>
-        /// Configure a Host that can be connected. If only one host is specified, it is used as the default
-        /// host for receive endpoints.
+        /// Configure a Host that can be connected. 
+        /// 配置可以连接的主机。
+        /// If only one host is specified, it is used as the default host for receive endpoints.
+        /// 如果只指定了一台主机，则将其用作接收端点的默认主机。
         /// </summary>
-        /// <param name="settings"></param>
-        /// <returns></returns>
+        /// <param name="settings">RabbitMq主机连接设置</param>
+        /// <returns>返回一个RabbitMq主机实例</returns>
         IRabbitMqHost Host(RabbitMqHostSettings settings);
 
         /// <summary>
         /// Declare a ReceiveEndpoint on the broker and configure the endpoint settings and message consumers.
+        /// 在代理上声明ReceiveEndpoint并配置端点设置和消息使用者。
         /// </summary>
-        /// <param name="host">The host for this endpoint</param>
-        /// <param name="queueName">The input queue name</param>
-        /// <param name="configure">The configuration method</param>
+        /// <param name="host">The host for this endpoint. 这个端点的主机</param>
+        /// <param name="queueName">The input queue name. 输入队列名称</param>
+        /// <param name="configure">The configuration method. 配置方法</param>
         void ReceiveEndpoint(IRabbitMqHost host, string queueName, Action<IRabbitMqReceiveEndpointConfigurator> configure);
     }
 }

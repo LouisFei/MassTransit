@@ -21,7 +21,8 @@ namespace MassTransit.ConsumeConfigurators
 
 
     /// <summary>
-    /// Connects a handler to the inbound pipe of the receive endpoint
+    /// Connects a handler to the inbound pipe of the receive endpoint.
+    /// 将处理程序连接到接收端点的入站管道
     /// </summary>
     /// <typeparam name="TMessage"></typeparam>
     public class HandlerConfigurator<TMessage> :

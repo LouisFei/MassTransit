@@ -18,7 +18,8 @@ namespace MassTransit
 
 
     /// <summary>
-    /// Configure a receiving endpoint
+    /// Configure a receiving endpoint.
+    /// 配置一个接收端点
     /// </summary>
     public interface IReceiveEndpointConfigurator :
         IConsumePipeConfigurator,
@@ -26,21 +27,28 @@ namespace MassTransit
         IPublishPipelineConfigurator
     {
         /// <summary>
-        /// Returns the input address of the receive endpoint
+        /// Returns the input address of the receive endpoint.
+        /// 获得接收端点地址。
         /// </summary>
         Uri InputAddress { get; }
 
+        /// <summary>
+        /// 添加接收端点规范
+        /// </summary>
+        /// <param name="configurator"></param>
         [EditorBrowsable(EditorBrowsableState.Never)]
         void AddEndpointSpecification(IReceiveEndpointSpecification configurator);
 
         /// <summary>
-        /// Sets the outbound message serializer
+        /// Sets the outbound message serializer.
+        /// 设置出站消息序列化程序
         /// </summary>
         /// <param name="serializerFactory">The factory to create the message serializer</param>
         void SetMessageSerializer(SerializerFactory serializerFactory);
 
         /// <summary>
-        /// Adds an inbound message deserializer to the available deserializers
+        /// Adds an inbound message deserializer to the available deserializers.
+        /// 向可用的反序列化程序添加入站消息反序列化程序
         /// </summary>
         /// <param name="contentType">The content type of the deserializer</param>
         /// <param name="deserializerFactory">The factory to create the deserializer</param>

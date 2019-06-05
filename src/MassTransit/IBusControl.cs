@@ -16,13 +16,23 @@ namespace MassTransit
     using System.Threading.Tasks;
 
 
+    /// <summary>
+    /// 总线控制接口
+    /// </summary>
     public interface IBusControl :
         IBus
     {
         /// <summary>
-        /// Starts the bus (assuming the battery isn't dead). Once the bus has been started, it cannot be started again, even after is has been stopped.
+        /// Starts the bus (assuming the battery isn't dead). 
+        /// 启动总线(假设电池没电)。
+        /// Once the bus has been started, it cannot be started again, even after is has been stopped.
+        /// 总线一旦启动，就无法重新启动，即使它已经停止。
         /// </summary>
-        /// <returns>The BusHandle for the started bus. This is no longer needed, as calling Stop on the IBusControl will stop the bus equally well.</returns>
+        /// <returns>
+        /// The BusHandle for the started bus. 
+        /// 启动的公共汽车的拉手。
+        /// This is no longer needed, as calling Stop on the IBusControl will stop the bus equally well.
+        /// </returns>
         Task<BusHandle> StartAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>

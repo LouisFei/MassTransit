@@ -18,7 +18,8 @@ namespace MassTransit.PipeConfigurators
 
 
     /// <summary>
-    /// Adds a message handler to the consuming pipe builder
+    /// Adds a message handler to the consuming pipe builder.
+    /// 向使用管道构建器添加消息处理程序
     /// </summary>
     /// <typeparam name="T">The message type</typeparam>
     public class HandlerPipeSpecification<T> :

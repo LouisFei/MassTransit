@@ -15,7 +15,9 @@ namespace MassTransit
     using System;
     using Configurators;
 
-
+    /// <summary>
+    /// 总线工厂扩展
+    /// </summary>
     public static class BusFactoryExtensions
     {
         public static IBusControl Build(this IBusFactory factory)

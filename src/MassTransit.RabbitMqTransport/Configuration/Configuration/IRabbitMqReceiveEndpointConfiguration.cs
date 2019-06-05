@@ -16,7 +16,9 @@ namespace MassTransit.RabbitMqTransport.Configuration
     using Topology;
     using Transport;
 
-
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IRabbitMqReceiveEndpointConfiguration :
         IReceiveEndpointConfiguration,
         IRabbitMqEndpointConfiguration

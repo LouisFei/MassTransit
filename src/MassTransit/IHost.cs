@@ -1,4 +1,4 @@
-// Copyright 2007-2017 Chris Patterson, Dru Sellers, Travis Smith, et. al.
+﻿// Copyright 2007-2017 Chris Patterson, Dru Sellers, Travis Smith, et. al.
 //  
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use
 // this file except in compliance with the License. You may obtain a copy of the 
@@ -21,6 +21,7 @@ namespace MassTransit
 
     /// <summary>
     /// A Bus Host is a transport-neutral reference to a host
+    /// 总线主机是对主机的与传输无关的引用
     /// </summary>
     public interface IHost :
         IConsumeMessageObserverConnector,
@@ -33,6 +34,7 @@ namespace MassTransit
     {
         /// <summary>
         /// An address that identifies the host
+        /// 标识主机的地址
         /// </summary>
         Uri Address { get; }
         

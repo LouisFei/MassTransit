@@ -20,7 +20,11 @@ namespace MassTransit
     {
         /// <summary>
         /// Select RabbitMQ as the transport for the service bus
+        /// 选择RabbitMQ作为服务总线的传输
         /// </summary>
+        /// <param name="selector">总线工厂选择器</param>
+        /// <param name="configure"></param>
+        /// <returns></returns>
         public static IBusControl CreateUsingRabbitMq(this IBusFactorySelector selector, Action<IRabbitMqBusFactoryConfigurator> configure)
         {
             return RabbitMqBusFactory.Create(configure);

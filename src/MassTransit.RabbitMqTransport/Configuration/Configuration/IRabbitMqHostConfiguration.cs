@@ -15,17 +15,27 @@ namespace MassTransit.RabbitMqTransport.Configuration
     using MassTransit.Configuration;
     using Transport;
 
-
+    /// <summary>
+    /// RabbitMq主机配置
+    /// </summary>
     public interface IRabbitMqHostConfiguration :
         IHostConfiguration
     {
+        /// <summary>
+        /// RabbitMq总线配置
+        /// </summary>
         IRabbitMqBusConfiguration BusConfiguration { get; }
 
+        /// <summary>
+        /// RabbitMq主机控制
+        /// </summary>
         new IRabbitMqHostControl Host { get; }
 
         /// <summary>
-        /// Create a receive endpoint configuration using the specified host
+        /// Create a receive endpoint configuration using the specified host.
+        /// 使用指定的主机创建接收端点配置.
         /// </summary>
+        /// <param name="queueName">消息队列名称</param>
         /// <returns></returns>
         IRabbitMqReceiveEndpointConfiguration CreateReceiveEndpointConfiguration(string queueName);
     }

@@ -16,17 +16,22 @@ namespace MassTransit.Transports
     using System.Threading.Tasks;
 
 
+    /// <summary>
+    /// 总线主机控制接口
+    /// </summary>
     public interface IBusHostControl :
         IHost
     {
         /// <summary>
         /// Starts the Host, which begins the connection asynchronously.
+        /// 启动主机，主机异步启动连接。
         /// </summary>
         /// <returns></returns>
         Task<HostHandle> Start();
 
         /// <summary>
         /// Returns true if the address matches the host
+        /// 如果地址与主机匹配，则返回true
         /// </summary>
         /// <param name="address"></param>
         /// <returns></returns>

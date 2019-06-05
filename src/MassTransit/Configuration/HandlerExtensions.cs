@@ -18,11 +18,14 @@ namespace MassTransit
     using GreenPipes;
     using Pipeline;
 
-
+    /// <summary>
+    /// 处理程序扩展
+    /// </summary>
     public static class HandlerExtensions
     {
         /// <summary>
         /// Adds a handler to the receive endpoint with additional configuration specified
+        /// 使用指定的附加配置向接收端点添加处理程序
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="configurator"></param>

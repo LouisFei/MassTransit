@@ -1,4 +1,4 @@
-// Copyright 2007-2015 Chris Patterson, Dru Sellers, Travis Smith, et. al.
+﻿// Copyright 2007-2015 Chris Patterson, Dru Sellers, Travis Smith, et. al.
 //  
 // Licensed under the Apache License, Version 2.0 (the "License"); you may not use
 // this file except in compliance with the License. You may obtain a copy of the 
@@ -13,8 +13,8 @@
 namespace MassTransit
 {
     /// <summary>
-    /// Use one of the selector extension methods to create a bus instance for the
-    /// selected transport.
+    /// Use one of the selector extension methods to create a bus instance for the selected transport.
+    /// 使用其中一个选择器扩展方法为所选传输创建总线实例。
     /// </summary>
     public interface IBusFactorySelector
     {

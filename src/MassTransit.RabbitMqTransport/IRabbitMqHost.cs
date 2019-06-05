@@ -17,7 +17,9 @@ namespace MassTransit.RabbitMqTransport
     using Integration;
     using Topology;
 
-
+    /// <summary>
+    /// RabbitMq主机
+    /// </summary>
     public interface IRabbitMqHost :
         IHost
     {

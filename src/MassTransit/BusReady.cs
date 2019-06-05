@@ -14,10 +14,14 @@ namespace MassTransit
 {
     public interface BusReady
     {
+        /// <summary>
+        /// 总线
+        /// </summary>
         IBus Bus { get; }
 
         /// <summary>
         /// The hosts that are part of the bus
+        /// 主机是总线的一部分
         /// </summary>
         HostReady[] Hosts { get; }
     }

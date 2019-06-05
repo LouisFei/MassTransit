@@ -19,11 +19,13 @@ namespace MassTransit
     {
         /// <summary>
         /// The Host address
+        /// 主机地址
         /// </summary>
         Uri HostAddress { get; }
 
         /// <summary>
         /// The receive endpoints that were started on the host
+        /// 在主机上启动的接收端点
         /// </summary>
         ReceiveEndpointReady[] ReceiveEndpoints { get; }
     }

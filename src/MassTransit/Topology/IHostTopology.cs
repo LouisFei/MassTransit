@@ -17,8 +17,9 @@ namespace MassTransit.Topology
     {
         /// <summary>
         /// Returns a unique temporary queue name for the host/topology.
+        /// 返回主机/拓扑的唯一临时队列名称。
         /// </summary>
-        /// <param name="prefix">A prefix to distinguish the queue for the purpose</param>
+        /// <param name="prefix">A prefix to distinguish the queue for the purpose.用于区分队列的前缀</param>
         /// <returns></returns>
         string CreateTemporaryQueueName(string prefix);
     }

@@ -16,7 +16,9 @@ namespace MassTransit.RabbitMqTransport.Topology.Settings
     using System.Collections.Generic;
     using Configurators;
 
-
+    /// <summary>
+    /// RabbitMqΩ” ’…Ë÷√
+    /// </summary>
     public class RabbitMqReceiveSettings :
         QueueBindingConfigurator,
         ReceiveSettings

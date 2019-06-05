@@ -20,21 +20,24 @@ namespace MassTransit.RabbitMqTransport
 
     /// <summary>
     /// Settings to configure a RabbitMQ host explicitly without requiring the fluent interface
+    /// 在不需要连贯接口的情况下显式配置RabbitMQ主机的设置
     /// </summary>
     public interface RabbitMqHostSettings
     {
         /// <summary>
-        ///     The RabbitMQ host to connect to (should be a valid hostname)
+        /// The RabbitMQ host to connect to (should be a valid hostname)
+        /// 要连接的RabbitMQ主机(应该是有效的主机名)
         /// </summary>
         string Host { get; }
 
         /// <summary>
-        ///     The RabbitMQ port to connect
+        /// The RabbitMQ port to connect
+        /// RabbitMQ主连接端口
         /// </summary>
         int Port { get; }
 
         /// <summary>
-        ///     The virtual host for the connection
+        /// The virtual host for the connection
         /// </summary>
         string VirtualHost { get; }
 
@@ -127,6 +130,7 @@ namespace MassTransit.RabbitMqTransport
 
         /// <summary>
         /// Returns the host address
+        /// 主机地址
         /// </summary>
         Uri HostAddress { get; }
 

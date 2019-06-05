@@ -14,7 +14,9 @@ namespace MassTransit.Configuration
 {
     using GreenPipes;
 
-
+    /// <summary>
+    /// 终结点配置
+    /// </summary>
     public interface IEndpointConfiguration :
         IConsumePipeConfigurator,
         ISendPipelineConfigurator,

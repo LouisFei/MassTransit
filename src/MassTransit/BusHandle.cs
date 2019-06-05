@@ -17,20 +17,24 @@ namespace MassTransit
 
 
     /// <summary>
-    /// Returned once a bus has been started. Should call Stop or Dispose before the process
-    /// can exit.
+    /// Returned once a bus has been started. 
+    /// 当总线被启动时返回。
+    /// Should call Stop or Dispose before the process can exit.
+    /// 应该在进程退出之前调用Stop或Dispose。
     /// </summary>
     public interface BusHandle
     {
         /// <summary>
         /// A task which can be awaited to know when the bus is ready and all of the receive endpoints have reported ready.
+        /// 可以等待的任务，以知道总线何时准备就绪，以及所有接收端点何时报告就绪。
         /// </summary>
         Task<BusReady> Ready { get; }
 
         /// <summary>
-        /// Stop the bus and all receiving endpoints on the bus. Note that cancelling the Stop
-        /// operation may leave the bus and/or one or more receive endpoints in an indeterminate
-        /// state.
+        /// Stop the bus and all receiving endpoints on the bus. 
+        /// 停止总线和总线上的所有接收端点。
+        /// Note that cancelling the Stop operation may leave the bus and/or one or more receive endpoints in an indeterminate state.
+        /// 注意，取消停止操作可能会使总线和/或一个或多个接收端点处于不确定状态。
         /// </summary>
         /// <param name="cancellationToken">Cancel the stop operation in progress</param>
         /// <returns>An awaitable task that is completed once everything is stopped</returns>

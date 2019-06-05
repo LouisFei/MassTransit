@@ -20,16 +20,19 @@ namespace MassTransit.RabbitMqTransport
     using MassTransit.Topology.EntityNameFormatters;
     using MassTransit.Topology.Topologies;
 
-
+    /// <summary>
+    /// 基于RabbitMq传输的总线工厂类
+    /// </summary>
     public static class RabbitMqBusFactory
     {
         public static IMessageTopologyConfigurator MessageTopology => Cached.MessageTopologyValue.Value;
 
         /// <summary>
         /// Configure and create a bus for RabbitMQ
+        /// 为RabbitMQ配置和创建总线
         /// </summary>
-        /// <param name="configure">The configuration callback to configure the bus</param>
-        /// <returns></returns>
+        /// <param name="configure">The configuration callback to configure the bus.配置回调函数来配置总线</param>
+        /// <returns>返回总线控制</returns>
         public static IBusControl Create(Action<IRabbitMqBusFactoryConfigurator> configure)
         {
             var topologyConfiguration = new RabbitMqTopologyConfiguration(MessageTopology);

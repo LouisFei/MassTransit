@@ -19,6 +19,7 @@ namespace MassTransit.Context
 
     /// <summary>
     /// The context of a receive endpoint
+    /// 接收端点的上下文
     /// </summary>
     public interface ReceiveEndpointContext :
         ISendObserverConnector,
@@ -26,6 +27,7 @@ namespace MassTransit.Context
     {
         /// <summary>
         /// The input address of the receive endpoint
+        /// 接收端点的输入地址
         /// </summary>
         Uri InputAddress { get; }
 

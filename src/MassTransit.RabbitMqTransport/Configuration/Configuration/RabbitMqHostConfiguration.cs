@@ -32,6 +32,11 @@ namespace MassTransit.RabbitMqTransport.Configuration
         IRabbitMqBusConfiguration IRabbitMqHostConfiguration.BusConfiguration => _busConfiguration;
         IRabbitMqHostControl IRabbitMqHostConfiguration.Host => _host;
 
+        /// <summary>
+        /// 使用指定的主机创建接收端点配置
+        /// </summary>
+        /// <param name="queueName"></param>
+        /// <returns></returns>
         public IRabbitMqReceiveEndpointConfiguration CreateReceiveEndpointConfiguration(string queueName)
         {
             return new RabbitMqReceiveEndpointConfiguration(this, queueName, _busConfiguration.CreateEndpointConfiguration());

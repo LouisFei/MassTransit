@@ -14,12 +14,15 @@ namespace MassTransit
 {
     using GreenPipes;
 
-
+    /// <summary>
+    /// 总线工厂接口
+    /// </summary>
     public interface IBusFactory :
         ISpecification
     {
         /// <summary>
-        /// Create the bus, returning the bus control interface
+        /// Create the bus, returning the bus control interface.
+        /// 创建总线，返回总线控制接口
         /// </summary>
         /// <returns></returns>
         IBusControl CreateBus();
